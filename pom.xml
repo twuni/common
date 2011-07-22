@@ -18,8 +18,8 @@
 	<description>This library contains foundational components and interfaces used by many projects.</description>
 
 	<scm>
-		<developerConnection>scm:git:ssh:git@github.com:twuni/common.git</developerConnection>
-		<connection>scm:git:ssh:git@github.com:twuni/common.git</connection>
+		<developerConnection>scm:git:git@github.com:twuni/common.git</developerConnection>
+		<connection>scm:git:git@github.com:twuni/common.git</connection>
 		<url>scm:git:https://twuni@github.com/twuni/common.git</url>
 	</scm>
 
