@@ -1,6 +1,5 @@
 package org.twuni.common.config;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -9,9 +8,10 @@ public class PropertiesConfiguration extends Configuration {
 	private final Properties properties;
 
 	public static Configuration load( String name ) {
+
 		Properties properties = new Properties();
 		try {
-			properties.load( new FileReader( String.format( "%s.properties", name ) ) );
+			properties.load( PropertiesConfiguration.class.getClassLoader().getResourceAsStream( String.format( "%s.properties", name ) ) );
 		} catch( IOException exception ) {
 			throw new RuntimeException( exception );
 		}
