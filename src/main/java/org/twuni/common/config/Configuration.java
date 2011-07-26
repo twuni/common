@@ -1,28 +1,10 @@
-package org.twuni.common;
+package org.twuni.common.config;
 
-import java.util.MissingResourceException;
-import java.util.ResourceBundle;
+public abstract class Configuration {
 
-public class Configuration {
+	public abstract String getString( String key );
 
-	private final ResourceBundle bundle;
-
-	public Configuration( String name ) {
-		bundle = ResourceBundle.getBundle( name );
-	}
-
-	public String getString( String key, String defaultValue ) {
-		String value = defaultValue;
-		try {
-			value = bundle.getString( key );
-		} catch( MissingResourceException exception ) {
-		}
-		return value;
-	}
-
-	public String getString( String key ) {
-		return bundle.getString( key );
-	}
+	public abstract String getString( String key, String defaultValue );
 
 	public double getDouble( String key ) {
 		return Double.parseDouble( getString( key ) );
